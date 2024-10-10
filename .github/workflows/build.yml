@@ -14,10 +14,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install Lua and LuaRocks
+    - name: Install Dependencies
       run: |
-        echo "Installing Lua and LuaRocks..."
-        brew install lua cmake luarocks
+        echo "Installing Lua, Lua-lfs and CMake..."
+        brew install lua cmake
+         brew install lua cmake luarocks
         luarocks install luafilesystem  # Install LuaFileSystem
 
     - name: Build Dynamic Library
